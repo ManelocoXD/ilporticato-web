@@ -1,0 +1,236 @@
+/* === Configuración general === */
+:root {
+    /* Colores inspirados en la bandera italiana y la estética de una pizzería */
+    --color-primary: #a11b1b; /* Rojo tomate */
+    --color-primary-dark: #8b1616; /* Rojo oscuro para hover */
+    --color-secondary: #006400; /* Verde oliva */
+    --color-background: #f9f9f9; /* Crema suave */
+    --color-text: #333333; /* Texto oscuro */
+    --color-white: #ffffff; /* Blanco puro */
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lora", serif; /* Fuente elegante para un toque italiano */
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+/* === Encabezado === */
+header {
+    background: linear-gradient(to bottom, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-white);
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* === Barra de navegación === */
+nav {
+    background: var(--color-background);
+    padding: 1rem;
+    box-shadow: var(--shadow);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+}
+
+nav a:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+/* === Sección principal === */
+.section {
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+}
+
+/* === Cuadrícula de categorías (index.html) === */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--color-white);
+    border: 1px solid var(--color-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.category-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.category-card h3 {
+    font-size: 1.5rem;
+    color: var(--color-text);
+    padding: 1rem;
+    background: var(--color-background);
+    width: 100%;
+    text-align: center;
+}
+
+/* === Cuadrícula de ítems del menú (pizzas.html, pastas.html, postres.html) === */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.menu-item {
+    background: var(--color-white);
+    border: 1px solid var(--color-secondary);
+    border-radius: 8px;
+    text-align: center;
+    padding: 1rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    box-shadow: var(--shadow);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.menu-item h3 {
+    font-size: 1.3rem;
+    margin: 0.5rem 0;
+}
+
+.menu-item p {
+    font-size: 1rem;
+    color: var(--color-text);
+}
+
+/* === Sección de contacto (contacto.html) === */
+#contacto p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+.phone-link, #contacto a {
+    color: var(--color-secondary); /* Verde para destacar el enlace */
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.phone-link:hover, #contacto a:hover {
+    color: var(--color-primary); /* Rojo al pasar el ratón */
+}
+
+.phone-link:focus, #contacto a:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+/* === Pie de página === */
+footer {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* === Media query para dispositivos móviles === */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
